@@ -8,17 +8,18 @@ import org.hibernate.engine.jdbc.connections.spi.MultiTenantConnectionProvider;
 import org.hibernate.service.UnknownUnwrapTypeException;
 import org.hibernate.service.spi.Stoppable;
 
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class MultiTenantConnectionProviderImpl implements MultiTenantConnectionProvider, Stoppable {
+public class MultiTenantConnectionProviderImpl implements Serializable, MultiTenantConnectionProvider, Stoppable {
 
     private HikariDataSource hikariDataSource;
 
     public MultiTenantConnectionProviderImpl(){
         HikariConfig hikariDataSource = new HikariConfig();
         hikariDataSource.setPoolName("H2-Database");
-        hikariDataSource.setMaximumPoolSize(10);
+        hikariDataSource.setMaximumPoolSize(1);
         hikariDataSource.setIdleTimeout(2);
         hikariDataSource.setJdbcUrl("jdbc:h2:mem:test;MODE=MySQL;INIT=RUNSCRIPT FROM './sql-scripts/h2/init.sql'");
         //hikariDataSource.setJdbcUrl("jdbc:h2:./test;create=true");
