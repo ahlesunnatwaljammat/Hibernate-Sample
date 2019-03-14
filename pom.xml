@@ -8,11 +8,13 @@
 
     <properties>
         <log4j2.version>2.7</log4j2.version>
+        <hibernate.version>5.4.1.Final</hibernate.version>
     </properties>
 
     <modules>
         <module>Hibernate-One-Way</module>
-        <module>multi-tenant-demo</module>
+        <module>multi-schema-tenant-demo</module>
+        <module>multi-database-tenant-demo</module>
     </modules>
 
     <groupId>edu.learn.hibernate</groupId>
@@ -37,6 +39,12 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
             <version>${log4j2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.5</version>
         </dependency>
 
         <dependency>

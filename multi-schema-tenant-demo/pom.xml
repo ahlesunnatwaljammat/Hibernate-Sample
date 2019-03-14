@@ -10,20 +10,19 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Hibernate-One-Way</artifactId>
+    <artifactId>multi-schema-tenant-demo</artifactId>
 
     <dependencies>
-        <!--Hibernate Dependencies-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>5.3.7.Final</version>
+            <version>${hibernate.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.15</version>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>3.3.1</version>
         </dependency>
 
         <dependency>
@@ -33,10 +32,9 @@
         </dependency>
 
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>LATEST</version>
         </dependency>
 
         <!-- Removed in JDK 9 and onward-->
@@ -51,7 +49,6 @@
             <artifactId>jaxb-runtime</artifactId>
             <version>2.3.1</version>
         </dependency>
-
     </dependencies>
 
 </project>
